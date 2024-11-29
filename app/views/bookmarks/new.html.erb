@@ -1,0 +1,10 @@
+<h1>Add Bookmark to <%= @list.name %></h1>
+<%= form_with model: @bookmark, url: list_bookmarks_path(@list) do |form| %>
+  <%= form.label :movie_id, "Choose a Movie" %>
+  <%= form.collection_select :movie_id, @movies, :id, :title %>
+
+  <%= form.label :comment %>
+  <%= form.text_area :comment %>
+
+  <%= form.submit "Add Bookmark" %>
+<% end %>
